@@ -6,7 +6,7 @@ This module is a Micro:bit MicroPython program that will tell you the temperatur
 
 from microbit import *
 
-numTemp = 0
+currentTemperature = 0
 
 # reset
 display.clear
@@ -16,9 +16,9 @@ sleep(1000)
 # temperature will display when A is pressed
 while True:
     if button_a.was_pressed():
-        numTemp = temperature()
+        currentTemperature = temperature()
         display.scroll("The temperature is")
-        display.scroll(numTemp)
+        display.scroll(currentTemperature)
         sleep(1000)
         display.clear  # reset
         display.show(Image.HAPPY)
